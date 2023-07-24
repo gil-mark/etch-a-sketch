@@ -6,25 +6,26 @@
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     
-        <h1>Etch-A-Sketch</h1>
-        <div id="subheadline">A learning project by Gil Mark</div>
-        
-        <div id="outerContainer">
-            <div id="innerContainer">
-                <div id="etchASketch"></div>
-            </div>
-
+    <h1>Etch-A-Sketch</h1>
+    <p>A learning project by Gil Mark<p>
+    
+    <div id="outerContainer">
+        <div id="innerContainer">
+            
+            <div id="etchASketch"></div>
+            
             <div id="controlsContainer">
                 
-                <div id="sliderOuterContainer">
+                <div id="sliderContainer">
                     <label for="axisSlider">Axis Length: </label>
-                    <div id="sliderInnerContainer">
-                        <input type="range" min="16" max="100" value="32" class="slider" id="axisSlider">
-                        <div id="sliderValue">32</div>
-                    </div>
+                    <input type="range" min="16" max="100" value="32" class="slider" id="axisSlider">
+                    <div id="sliderValue">32</div>
                 </div>
 
                 <div id="drawingTypeContainer">
@@ -42,5 +43,6 @@
                 </div>
             </div>
         </div>
+    </div>
 </body>
 </html>

@@ -1,12 +1,26 @@
 body {
     background: rgb(255, 241, 230);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin: 8px;
+}
+
+p {
+    margin: 8px;
 }
 
 #outerContainer {
     display: flex;
-    flex-direction: column;
-    width: 800px;
+    width: 100vw;
     padding: 8px;
+    justify-content: center;
+}
+
+#innerContainer {
+    width: 800px;
 }
 
 #etchASketch {
@@ -22,10 +36,6 @@ body {
     flex-direction: column;
 }
 
-.active {
-    background: black;
-}
-
 #controlsContainer {
     display: flex;
     justify-content: space-between;
@@ -33,18 +43,13 @@ body {
     align-items: center;
 }
 
-#sliderOuterContainer {
+#sliderContainer {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-#sliderInnerContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #clear, #undo {
     padding: 8px 16px;
+    margin: 2px;
 }
