@@ -45,6 +45,6 @@ body {
     align-items: center;
 }
 
-#clear {
-    padding: 0 16px;
+#clear, #undo {
+    padding: 8px 16px;
 }

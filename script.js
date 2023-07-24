@@ -44,7 +44,14 @@ function draw() {
 
     for (const cell of cells) {
         cell.addEventListener('mouseover', function(e) {
-            if (e.buttons === 1) {
+            if (e.buttons === 1) {                
+                let cellChange = {
+                    oldCellColor: cell.style.background,
+                    newCellColor: '',
+                    oldTintIndex: cell.attributes.tintIndex.value,
+                    id: cell.attributes.id.value
+                }
+
                 switch (drawingVariant) {
                     case 'random':
                         let r = Math.floor(Math.random() * 255).toString();
@@ -72,11 +79,22 @@ function draw() {
                         break;
                 }
                 
-                
+                cellChange.newCellColor = cell.style.background;
+                cellChanges.push(cellChange);
                 
             }
         })
     }
+}
+
+function undo() {
+    if (cellChanges.length === 0) return;
+
+    let lastCell = cellChanges[cellChanges.length - 1];
+    let undoCell = document.getElementById(lastCell.id);
+    undoCell.style.background = lastCell.oldCellColor;
+    undoCell.attributes.tintIndex = lastCell.tintIndex;
+    cellChanges.pop();
 }
 
 
@@ -84,6 +102,7 @@ function draw() {
 drawGrid()
 draw()
 
+//slider logic
 let slider = document.getElementById('axisSlider');
 let sliderValue = document.getElementById('sliderValue');
 
@@ -94,12 +113,20 @@ slider.oninput = function() {
     draw();
 }
 
+//drawing type logic
 let drawingVariant = 'regular'
 let drawingType = document.querySelector('#drawingType');
 drawingType.addEventListener('change', (e) => {
     drawingVariant = e.target.value;
 })
 
+//clear button logic
 let clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', clearDrawing)
+
+//undo button logic
+let cellChanges = [];
+
+let undoButton = document.getElementById('undo');
+undoButton.addEventListener('click', undo)
 
