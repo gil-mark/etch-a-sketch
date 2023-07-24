@@ -19,15 +19,26 @@ function initialize(axis) {
             column.appendChild(row);
         }
     }
+
+    let cells = document.querySelectorAll('.cell');
+
+    for (const cell of cells) {
+        cell.addEventListener('mouseover', function() {
+            cell.classList.add('active');
+        })
+    }
 }
 
-let axis = 16;
+function clear() {
+    let cells = document.querySelectorAll('.cell');
+
+    for (const cell of cells) {
+        cell.classList.remove('active');
+    }
+}
+
+let axis = 32;
 initialize(axis);
 
-let cells = document.querySelectorAll('.cell');
-
-for (const cell of cells) {
-    cell.addEventListener('mouseover', function() {
-        cell.classList.add('active');
-    })
-}
+let clearButton = document.getElementById('clear');
+clearButton.addEventListener('click', clear)

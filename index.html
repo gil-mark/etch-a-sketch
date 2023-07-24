@@ -8,12 +8,23 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="outerContainer">
+    
         <h1>Etch-A-Sketch</h1>
         <div id="subheadline">A learning project by Gil Mark</div>
-        <div id="innerContainer">
-            <div id="etchASketch"></div>
+        
+        <div id="outerContainer">
+            <div id="innerContainer">
+                <div id="etchASketch"></div>
+            </div>
+
+            <div id="controlsContainer">
+                <div id="sliderContainer">
+                    <input type="range" min="16" max="100" value="32" class="slider" id="axisSlider">
+                    <div id="sliderValue">32</div>
+                </div>
+
+                <button id="clear">Clear</button>
+            </div>
         </div>
-    </div>
 </body>
 </html>

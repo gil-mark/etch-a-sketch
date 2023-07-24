@@ -1,9 +1,20 @@
+body {
+    background: rgb(255, 234, 218);
+}
+
+#outerContainer {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    padding: 8px;
+}
+
 #etchASketch {
     width: 800px;
     height: 800px;
     border: 1px solid black;
-    margin: 8px;
     display: flex;
+    background: white;
 }
 
 .col {
@@ -13,4 +24,16 @@
 
 .active {
     background: black;
+}
+
+#controlsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0 8px 0;
+}
+
+#sliderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
