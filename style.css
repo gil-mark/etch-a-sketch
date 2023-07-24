@@ -1,0 +1,16 @@
+#etchASketch {
+    width: 800px;
+    height: 800px;
+    border: 1px solid black;
+    margin: 8px;
+    display: flex;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.cell {
+    
+}
