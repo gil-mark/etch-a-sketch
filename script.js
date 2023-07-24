@@ -1,4 +1,4 @@
-function initialize(axis) {
+function drawGrid(axis) {
     let etchASketch = document.querySelector('#etchASketch');
     let cellDimension = 800 / axis;
 
@@ -29,7 +29,7 @@ function initialize(axis) {
     }
 }
 
-function clear() {
+function clearDrawing() {
     let cells = document.querySelectorAll('.cell');
 
     for (const cell of cells) {
@@ -37,8 +37,25 @@ function clear() {
     }
 }
 
+function removeGrid() {
+    let canvas = document.querySelector('etchASketch');
+
+    while (etchASketch.firstChild) {
+        etchASketch.removeChild(etchASketch.firstChild)
+    }
+}
+
 let axis = 32;
-initialize(axis);
+drawGrid(axis);
 
 let clearButton = document.getElementById('clear');
-clearButton.addEventListener('click', clear)
+clearButton.addEventListener('click', clearDrawing)
+
+let slider = document.getElementById('axisSlider');
+let sliderValue = document.getElementById('sliderValue');
+
+slider.oninput = function() {
+    sliderValue.innerText = this.value;
+    removeGrid();
+    drawGrid(+this.value);
+}
