@@ -18,9 +18,22 @@
             </div>
 
             <div id="controlsContainer">
-                <div id="sliderContainer">
-                    <input type="range" min="16" max="100" value="32" class="slider" id="axisSlider">
-                    <div id="sliderValue">32</div>
+                
+                <div id="sliderOuterContainer">
+                    <label for="axisSlider">Axis Length: </label>
+                    <div id="sliderInnerContainer">
+                        <input type="range" min="16" max="100" value="32" class="slider" id="axisSlider">
+                        <div id="sliderValue">32</div>
+                    </div>
+                </div>
+
+                <div id="drawingTypeContainer">
+                    <label for="drawingType">Drawing Type: </label>
+                    <select id="drawingType">
+                        <option value="regular">Regular</option>
+                        <option value="random">Random</option>
+                        <option value="tint">Tint</option>
+                    </select>
                 </div>
 
                 <button id="clear">Clear</button>

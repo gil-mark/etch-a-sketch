@@ -1,5 +1,5 @@
 body {
-    background: rgb(255, 234, 218);
+    background: rgb(255, 241, 230);
 }
 
 #outerContainer {
@@ -30,10 +30,21 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 8px 0 8px 0;
+    align-items: center;
 }
 
-#sliderContainer {
+#sliderOuterContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#sliderInnerContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#clear {
+    padding: 0 16px;
 }
